@@ -1,5 +1,3 @@
-// 52-53. AI Signups and Code walkthrough
-
 // import Anthropic from "@anthropic-ai/sdk"
 import { InferenceClient } from '@huggingface/inference'
 
