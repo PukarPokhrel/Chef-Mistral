@@ -4,7 +4,7 @@ export default function IngredientsList(props) {
   ))
 
   return (
-    <section>
+    <section className="ingredients-section">
       <h2>Ingredients in hand:</h2>
       <ul className="ingredients-list" aria-live="polite">
         { ingredientsListItem }

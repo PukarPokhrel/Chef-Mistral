@@ -66,6 +66,10 @@ main {
   margin-right: 5px;
 }
 
+section.ingredients-section {
+  margin-inline: 25px;
+}
+
 ul.ingredients-list {
   margin-bottom: 48px;
 }
@@ -113,6 +117,7 @@ ul.ingredients-list > li {
     line-height: 28px;
     font-size: 1.125rem;
     font-weight: 400;
+    margin-inline: 25px;
 }
 
 .suggested-recipe-container ul li,

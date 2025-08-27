@@ -41,7 +41,7 @@ export default function Main() {
         <input
           type="text"
           name="ingredient"
-          placeholder="e.g. Oregano"
+          placeholder="e.g. Oregano (Add atleast 4 ingredients)"
           aria-label="Add Ingredient"
           required
         />
