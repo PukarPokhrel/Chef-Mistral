@@ -6,11 +6,21 @@ import { getRecipeFromMistral } from "../data/ai";
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const recipeSection = useRef(null);
 
   async function getRecipe() {
-    const recipeMarkdown = await getRecipeFromMistral(ingredients);
-    setRecipe(recipeMarkdown);
+    setIsLoading(true);
+
+    try {
+      const recipeMarkdown = await getRecipeFromMistral(ingredients);
+      setRecipe(recipeMarkdown);
+    } catch (error) {
+      console.error(`Failed to fetch recipe: ${error}`)
+    } finally {
+      setIsLoading(false);
+    }
+
   }
 
   function addIngredient(formData) {
@@ -56,7 +66,9 @@ export default function Main() {
         />
       ) : null}
 
-      {recipe ? <MistralRecipe recipe={recipe} /> : null}
+      {isLoading
+        ? <h2>Loading...</h2>
+        : recipe ? <MistralRecipe recipe={recipe} /> : null}
     </main>
   );
 }
